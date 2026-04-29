@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CANOPY ARCADE · PROMPT → PROFIT</title>
+  <meta name="description" content="The Canopy arcade. Prompts, packs, academy, guides, 1:1 sessions. Insert coin to profit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="crt-overlay" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="marquee">
+    <div class="marquee-inner">
+      <span class="bulb"></span>
+      <h1 class="logo">CANOPY<span class="logo-mark">★</span>ARCADE</h1>
+      <span class="bulb"></span>
+    </div>
+    <p class="tagline">PROMPT <span class="arrow">▸</span> PROFIT</p>
+  </header>
+
+  <section class="hero">
+    <div class="hero-screen">
+      <p class="blink player-ready">PLAYER 1 READY</p>
+      <h2 class="hero-headline">INSERT COIN<br>TO PROFIT</h2>
+      <p class="hero-sub">SIX CABINETS. ONE MISSION. PRESS START.</p>
+      <a href="#cabinets" class="press-start">▶ PRESS START</a>
+    </div>
+  </section>
+
+  <main id="cabinets" class="cabinets">
+    <h3 class="section-title">SELECT YOUR CABINET</h3>
+    <div class="cabinet-grid">
+
+      <article class="cabinet" data-color="cyan" data-cab="guide">
+        <div class="cab-screen">
+          <span class="cab-tag">FREE PLAY</span>
+          <div class="cab-art" aria-hidden="true">
+            <span class="pixel pixel-coin">¢</span>
+          </div>
+          <h4 class="cab-name">FIRST $3K</h4>
+          <p class="cab-meta">5 PROMPTS · LEAD MAGNET</p>
+        </div>
+        <button class="cab-btn">INSERT COIN</button>
+      </article>
+
+      <article class="cabinet" data-color="hot-pink" data-cab="prompts">
+        <div class="cab-screen">
+          <span class="cab-tag">$27</span>
+          <div class="cab-art" aria-hidden="true">
+            <span class="pixel pixel-disc">◉</span>
+          </div>
+          <h4 class="cab-name">STARTER KIT</h4>
+          <p class="cab-meta">30 PROMPTS · 5 SECTIONS</p>
+        </div>
+        <button class="cab-btn">PLAY</button>
+      </article>
+
+      <article class="cabinet" data-color="sunset" data-cab="dm">
+        <div class="cab-screen">
+          <span class="cab-tag">$47</span>
+          <div class="cab-art" aria-hidden="true">
+            <span class="pixel pixel-bag">$</span>
+          </div>
+          <h4 class="cab-name">DM PLAYBOOK</h4>
+          <p class="cab-meta">10 PROMPTS · CLOSE THE BAG</p>
+        </div>
+        <button class="cab-btn">PLAY</button>
+      </article>
+
+      <article class="cabinet" data-color="magenta" data-cab="academy">
+        <div class="cab-screen">
+          <span class="cab-tag">WEEKLY</span>
+          <div class="cab-art" aria-hidden="true">
+            <span class="pixel pixel-star">✦</span>
+          </div>
+          <h4 class="cab-name">ACADEMY</h4>
+          <p class="cab-meta">LIVE WEDS · 8PM EST</p>
+        </div>
+        <button class="cab-btn">ENROLL</button>
+      </article>
+
+      <article class="cabinet" data-color="cyan" data-cab="oneonone">
+        <div class="cab-screen">
+          <span class="cab-tag">$350 / $900</span>
+          <div class="cab-art" aria-hidden="true">
+            <span class="pixel pixel-crown">♛</span>
+          </div>
+          <h4 class="cab-name">1:1 SESSIONS</h4>
+          <p class="cab-meta">BOOK YOUR PLAYER 1</p>
+        </div>
+        <button class="cab-btn">START</button>
+      </article>
+
+      <article class="cabinet locked" data-color="hot-pink" data-cab="contentos">
+        <div class="cab-screen">
+          <span class="cab-tag">SOON</span>
+          <div class="cab-art" aria-hidden="true">
+            <span class="pixel pixel-lock">▮▮</span>
+          </div>
+          <h4 class="cab-name">CONTENT OS</h4>
+          <p class="cab-meta">LOADING<span class="dots">...</span></p>
+        </div>
+        <button class="cab-btn" disabled>LOCKED</button>
+      </article>
+
+    </div>
+  </main>
+
+  <section class="highscore">
+    <h3 class="section-title">HIGH SCORES</h3>
+    <table class="hs-table">
+      <thead>
+        <tr><th>RANK</th><th>PLAYER</th><th>WIN</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td>STEPH.G</td><td>FIRST $3K CLOSED</td></tr>
+        <tr><td>02</td><td>THE GIRLS</td><td>2K LINKEDIN BASE</td></tr>
+        <tr><td>03</td><td>CANOPY HQ</td><td>15.1K IG ↑700/DAY</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="footer">
+    <p>© CANOPY ARCADE · MIAMI · PROMPT → PROFIT</p>
+    <p class="quarter">PRESS [F] TO INSERT COIN</p>
+  </footer>
+
+  <div class="flash" aria-hidden="true"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
