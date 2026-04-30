@@ -1,287 +1,233 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Canopy · Build your internet world</title>
-  <meta name="description" content="Club Canopy. Prompt packs, mini-guides, digital drops, and tiny workflow systems for women building prettier, faster online worlds.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&family=VT323&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canopy - Creator Guides, Drops, and Club Canopy</title>
+  <meta name="description" content="Canopy is a dreamy creator shop for prompt packs, render drops, Academy sessions, Club Canopy, and creator systems." />
+  <meta property="og:title" content="Canopy - Build Your Internet World" />
+  <meta property="og:description" content="Enter Club Canopy, choose your medium, and browse creator drops, guides, freebies, Academy sessions, and Content OS tools." />
+  <meta property="og:image" content="stephanie-pixel-avatar.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Righteous&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="home-page">
+  <main id="top" class="home-main">
+    <section class="landing-home" aria-label="Canopy homepage">
+      <nav class="landing-pill-nav" aria-label="Home navigation">
+        <a href="about.html">about</a>
+        <a href="shop.html">shop</a>
+        <a href="drop-club.html">club<br />canopy</a>
+        <a href="academy.html">canopy<br />academy</a>
+        <a href="content-os.html">canopy<br />content os</a>
+        <a href="resources.html">free<br />resources</a>
+      </nav>
 
-  <div class="grain" aria-hidden="true"></div>
-  <div class="shimmer" aria-hidden="true"></div>
-
-  <header class="marquee" role="banner">
-    <span class="bulb"></span>
-    <span>CLUB CANOPY</span>
-    <span class="star">★</span>
-    <span>MIAMI</span>
-    <span class="star">★</span>
-    <span>OPEN</span>
-    <span class="bulb"></span>
-  </header>
-
-  <!-- 1. HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-text">
-      <span class="eyebrow">Club Canopy · Now Open</span>
-      <h1 class="hero-headline">Build your <em>internet world.</em></h1>
-      <p class="hero-sub">
-        Prompt packs, mini-guides, digital drops, and tiny workflow systems for women building prettier, faster online worlds.
-      </p>
-      <div class="hero-ctas">
-        <a class="cta cta--primary" href="#doors">Choose Your Entrance ↓</a>
-        <a class="cta cta--ghost" href="#drops">Shop the Drops</a>
-      </div>
-    </div>
-
-    <div class="hero-image">
-      <img src="./assets/club-canopy-girls.jpg" alt="The Canopy Guides standing under the club marquee">
-      <span class="hero-sparkle one">✦</span>
-      <span class="hero-sparkle two">✦</span>
-    </div>
-  </section>
-
-  <!-- 2. CHOOSE YOUR ENTRANCE -->
-  <section class="doors" id="doors">
-    <div class="doors-head">
-      <span class="eyebrow" style="color: var(--violet-glow)">Choose Your Entrance</span>
-      <p class="section-line">Three doors. Pick the one that fits where you are.</p>
-    </div>
-
-    <div class="doors-grid">
-      <a class="ticket ticket--shop" href="#drops">
-        <span class="ticket-stamp">No. 01 · Shop</span>
-        <h3 class="ticket-name">Shop the Drops</h3>
-        <p class="ticket-line">Prompt packs, kits, and mini-guides. Buy once, use forever.</p>
-        <span class="ticket-cta">Open the Shop</span>
-      </a>
-
-      <a class="ticket ticket--free" href="#drop-first3k">
-        <span class="ticket-stamp">No. 02 · Free</span>
-        <h3 class="ticket-name">Grab Freebies</h3>
-        <p class="ticket-line">Starter library, prompt samples, mini-guides on the house.</p>
-        <span class="ticket-cta">Take a Freebie</span>
-      </a>
-
-      <a class="ticket ticket--club" href="#guestlist">
-        <span class="ticket-stamp">No. 03 · Members</span>
-        <h3 class="ticket-name">Enter Club Canopy</h3>
-        <p class="ticket-line">Members-only drops and weekly creator experiments.</p>
-        <span class="ticket-cta">Claim Your Pass</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- 3. THE CANOPY GUIDES -->
-  <section class="guides" id="guides">
-    <div class="guides-head">
-      <span class="eyebrow" style="color: var(--aqua)">The Canopy Guides</span>
-      <p class="section-line">Five mediums. Pick your lane.</p>
-    </div>
-
-    <div class="guides-row">
-      <button class="guide guide--voice" data-lane="voice">
-        <span class="guide-num">01</span>
-        <span class="guide-name">Voice</span>
-        <span class="guide-line">Hooks, captions, scripts, brand voice.</span>
-      </button>
-      <button class="guide guide--visual" data-lane="visual">
-        <span class="guide-num">02</span>
-        <span class="guide-name">Visual</span>
-        <span class="guide-line">Renders, image prompts, aesthetics.</span>
-      </button>
-      <button class="guide guide--motion" data-lane="motion">
-        <span class="guide-num">03</span>
-        <span class="guide-name">Motion</span>
-        <span class="guide-line">Reels, short-form, shot lists.</span>
-      </button>
-      <button class="guide guide--systems" data-lane="systems">
-        <span class="guide-num">04</span>
-        <span class="guide-name">Systems</span>
-        <span class="guide-line">Content OS, workflows, automations.</span>
-      </button>
-      <button class="guide guide--money" data-lane="money">
-        <span class="guide-num">05</span>
-        <span class="guide-name">Money</span>
-        <span class="guide-line">Offers, sales, first paid clients.</span>
-      </button>
-    </div>
-  </section>
-
-  <!-- 4. FEATURED DROPS -->
-  <section class="drops" id="drops">
-    <div class="drops-head">
-      <span class="eyebrow" style="color: var(--sunset)">Now Showing</span>
-      <p class="section-line">Six drops. Six rooms. Pick where you're going.</p>
-    </div>
-
-    <div class="drops-grid">
-
-      <article class="drop drop--feature" id="drop-first3k" data-lane="money">
-        <div class="drop-tags">
-          <span class="drop-tag money">Money</span>
+      <section class="club-hero" aria-labelledby="club-hero-title">
+        <div class="landing-showcase" aria-label="Welcome to Club Canopy pixel dancers">
+          <div class="landing-video-card">
+            <span class="frame-led led-top-left" aria-hidden="true"></span>
+            <span class="frame-led led-top-right" aria-hidden="true"></span>
+            <span class="frame-led led-bottom-left" aria-hidden="true"></span>
+            <span class="frame-led led-bottom-right" aria-hidden="true"></span>
+            <span class="video-sparkle sparkle-one" aria-hidden="true">✦</span>
+            <span class="video-sparkle sparkle-two" aria-hidden="true">✧</span>
+            <span class="video-sparkle sparkle-three" aria-hidden="true">✦</span>
+            <video class="landing-video" src="canopy-hero-dancers.mp4" autoplay muted loop playsinline preload="auto" aria-label="Welcome to Club Canopy pixel dancers"></video>
+          </div>
         </div>
-        <h3 class="drop-name">First $3K</h3>
-        <p class="drop-line">How I landed my first client with five prompts. The lead-magnet that started Canopy.</p>
-        <div class="drop-foot">
-          <span class="drop-price free">FREE</span>
-          <a class="drop-cta" href="#guestlist" data-link="kit-first3k">Take the Freebie</a>
+
+        <div class="club-hero-card">
+          <span class="club-kicker">Club Canopy is open</span>
+          <div class="headline-wrap">
+            <span class="headline-twinkle twinkle-a" aria-hidden="true">✦</span>
+            <span class="headline-twinkle twinkle-b" aria-hidden="true">✧</span>
+            <span class="headline-twinkle twinkle-c" aria-hidden="true">✦</span>
+            <h1 id="club-hero-title">Build your internet world.</h1>
+          </div>
+          <p>Canopy is a dreamy creator shop for prompt packs, render drops, guides, and tiny systems that make your online world faster, prettier, and more you.</p>
+          <div class="hero-actions" aria-label="Hero actions">
+            <a class="soft-start" href="#entrance">Press Start</a>
+            <a class="ghost-link" href="#guides">Choose your guide</a>
+          </div>
         </div>
-      </article>
+      </section>
 
-      <article class="drop" id="drop-starter" data-lane="voice money">
-        <div class="drop-tags">
-          <span class="drop-tag voice">Voice</span>
-          <span class="drop-tag money">Money</span>
+      <section class="start-here" id="entrance" aria-labelledby="start-here-title">
+        <div class="start-here-heading">
+          <span>Choose your entrance</span>
+          <h2 id="start-here-title">Pick your portal.</h2>
+          <p>Start with a drop, a freebie, or the club.</p>
         </div>
-        <h3 class="drop-name">Starter Kit</h3>
-        <p class="drop-line">30 prompts across 5 sections. The fastest way into Canopy.</p>
-        <div class="drop-foot">
-          <span class="drop-price">$27</span>
-          <a class="drop-cta" href="#guestlist" data-link="stripe-starter">Get the Kit</a>
+        <div class="start-here-grid">
+          <a class="start-card portal-tile" href="shop.html">
+            <span class="portal-status">LEVEL 01</span>
+            <span class="portal-corners" aria-hidden="true"></span>
+            <span class="portal-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 9h10l1 10H6L7 9Z" />
+                <path d="M9 9a3 3 0 0 1 6 0" />
+                <path d="M17.5 4.5 18.4 6l1.6.7-1.6.7-.9 1.6-.8-1.6-1.7-.7 1.7-.7.8-1.5Z" />
+              </svg>
+            </span>
+            <span class="portal-text">
+              <strong>Shop the Drops</strong>
+              <span>Guides, prompts, and creator kits.</span>
+            </span>
+            <span class="portal-cta">Enter Portal <span aria-hidden="true">&rarr;</span></span>
+          </a>
+          <a class="start-card portal-tile" href="resources.html">
+            <span class="portal-status">LEVEL 02</span>
+            <span class="portal-corners" aria-hidden="true"></span>
+            <span class="portal-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 10h14v10H5V10Z" />
+                <path d="M4 7h16v3H4V7Z" />
+                <path d="M12 7v13" />
+                <path d="M12 7c-3.2 0-4.2-3.2-1.6-3.2C11.8 3.8 12 7 12 7Z" />
+                <path d="M12 7c3.2 0 4.2-3.2 1.6-3.2C12.2 3.8 12 7 12 7Z" />
+              </svg>
+            </span>
+            <span class="portal-text">
+              <strong>Grab Freebies</strong>
+              <span>Samples, mini-guides, and creator tools.</span>
+            </span>
+            <span class="portal-cta">Enter Portal <span aria-hidden="true">&rarr;</span></span>
+          </a>
+          <a class="start-card portal-tile" href="drop-club.html">
+            <span class="portal-status">LEVEL 03</span>
+            <span class="portal-corners" aria-hidden="true"></span>
+            <span class="portal-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z" />
+                <path d="M12 7v10" />
+                <path d="M8 12h8" />
+                <path d="M15.5 8.5 17 7l1.5 1.5L17 10l-1.5-1.5Z" />
+              </svg>
+            </span>
+            <span class="portal-text">
+              <strong>Enter Club Canopy</strong>
+              <span>Members-only drops and experiments.</span>
+            </span>
+            <span class="portal-cta">Enter Portal <span aria-hidden="true">&rarr;</span></span>
+          </a>
         </div>
-      </article>
+      </section>
 
-      <article class="drop" id="drop-dm" data-lane="voice money">
-        <div class="drop-tags">
-          <span class="drop-tag voice">Voice</span>
-          <span class="drop-tag money">Money</span>
+      <section class="guide-room" id="guides" aria-labelledby="guide-room-title">
+        <div class="guide-heading">
+          <span>Canopy Guides</span>
+          <h2 id="guide-room-title">Choose your medium.</h2>
+          <p>Each guide marks a creator lane, so you can shop by what you are trying to make.</p>
         </div>
-        <h3 class="drop-name">DM Playbook</h3>
-        <p class="drop-line">10 prompts that closed a $4K deal in the DMs. Real scripts, no guessing.</p>
-        <div class="drop-foot">
-          <span class="drop-price">$47</span>
-          <a class="drop-cta" href="#guestlist" data-link="stripe-dm">Open the Drop</a>
+        <div class="guide-grid" aria-label="Canopy guide categories">
+          <a class="guide-card voice" href="shop.html">
+            <span class="guide-stamp" aria-hidden="true">V</span>
+            <strong>Voice</strong>
+            <span>Hooks, captions, scripts, newsletters, brand voice, and DMs.</span>
+          </a>
+          <a class="guide-card visual" href="shop.html">
+            <span class="guide-stamp" aria-hidden="true">✧</span>
+            <strong>Visual</strong>
+            <span>Renders, image prompts, aesthetics, moodboards, and brand visuals.</span>
+          </a>
+          <a class="guide-card motion" href="resources.html">
+            <span class="guide-stamp" aria-hidden="true">▶</span>
+            <strong>Motion</strong>
+            <span>Reels, TikToks, content ideas, shot lists, and short-form systems.</span>
+          </a>
+          <a class="guide-card systems" href="content-os.html">
+            <span class="guide-stamp" aria-hidden="true">◆</span>
+            <strong>Systems</strong>
+            <span>Workflows, automations, calendars, organization, and Content OS.</span>
+          </a>
+          <a class="guide-card money" href="academy.html">
+            <span class="guide-stamp" aria-hidden="true">$</span>
+            <strong>Money</strong>
+            <span>Offers, sales, lead gen, client conversion, and first paid clients.</span>
+          </a>
         </div>
-      </article>
+      </section>
 
-      <article class="drop drop--wide" id="drop-workshop" data-lane="money">
-        <div class="drop-tags">
-          <span class="drop-tag money">Money</span>
-          <span class="pixel-tag" style="color: var(--aqua); border-color: var(--aqua)">LIVE</span>
+      <section class="featured-cabinets" id="drops" aria-labelledby="featured-cabinets-title">
+        <div class="cabinet-heading">
+          <span>Featured cabinets</span>
+          <h2 id="featured-cabinets-title">Select your drop.</h2>
+          <p>Creator tools packaged like polished arcade cabinets, each one leading to a different room in the Canopy world.</p>
         </div>
-        <h3 class="drop-name">Wednesday Workshop</h3>
-        <p class="drop-line">Live every Wednesday, 8PM EST. Free seat at the table while seats last.</p>
-        <div class="drop-foot">
-          <span class="drop-price free">FREE</span>
-          <a class="drop-cta" href="#guestlist" data-link="kit-workshop">RSVP</a>
+        <div class="cabinet-grid">
+          <a class="drop-cabinet cyan" href="resources.html">
+            <span class="cabinet-label">Guide: Money</span>
+            <span class="cabinet-screen" aria-hidden="true">$3K</span>
+            <strong>First $3K</strong>
+            <span>Lead magnet and starter prompts for finding your first paid clients.</span>
+            <em>Open cabinet</em>
+          </a>
+          <a class="drop-cabinet pink" href="shop.html">
+            <span class="cabinet-label">Guide: Voice</span>
+            <span class="cabinet-screen" aria-hidden="true">KIT</span>
+            <strong>Starter Kit</strong>
+            <span>Prompt packs, captions, hooks, and creator building blocks.</span>
+            <em>Browse the shelf</em>
+          </a>
+          <a class="drop-cabinet gold" href="shop.html">
+            <span class="cabinet-label">Guide: Money</span>
+            <span class="cabinet-screen" aria-hidden="true">DM</span>
+            <strong>DM Playbook</strong>
+            <span>Conversation prompts and sales notes for warmer client conversion.</span>
+            <em>View playbook</em>
+          </a>
+          <a class="drop-cabinet violet" href="academy.html">
+            <span class="cabinet-label">Guide: Motion</span>
+            <span class="cabinet-screen" aria-hidden="true">LIVE</span>
+            <strong>Academy</strong>
+            <span>Webinars, courses, and guided creator sessions for building with support.</span>
+            <em>Enter Academy</em>
+          </a>
+          <a class="drop-cabinet aqua" href="contact.html">
+            <span class="cabinet-label">Guide: Systems</span>
+            <span class="cabinet-screen" aria-hidden="true">1:1</span>
+            <strong>1:1 Sessions</strong>
+            <span>Personal direction for your offers, content workflow, and next build.</span>
+            <em>Start the note</em>
+          </a>
+          <a class="drop-cabinet lavender" href="content-os.html">
+            <span class="cabinet-label">Guide: Systems</span>
+            <span class="cabinet-screen" aria-hidden="true">OS</span>
+            <strong>Content OS</strong>
+            <span>Calendars, automations, workflows, and organization for your content engine.</span>
+            <em>See the system</em>
+          </a>
         </div>
-      </article>
+      </section>
 
-      <article class="drop" id="drop-1on1" data-lane="money systems">
-        <div class="drop-tags">
-          <span class="drop-tag money">Money</span>
-          <span class="drop-tag systems">Systems</span>
+      <section class="landing-guest" aria-labelledby="guest-list-title">
+        <div class="landing-guest-copy">
+          <h2 id="guest-list-title">Free creator drops, straight to your inbox.</h2>
+          <p>Join the Canopy guestlist for prompt samples, mini-guides, release alerts, and creator workflow ideas.</p>
         </div>
-        <h3 class="drop-name">1:1 Sessions</h3>
-        <p class="drop-line">Build your AI plan with Stephanie. Single session or a 3-pack to clarity.</p>
-        <div class="drop-foot">
-          <span class="drop-price">$350 / $900</span>
-          <a class="drop-cta" href="#guestlist" data-link="cal-1on1">Book the Session</a>
-        </div>
-      </article>
+        <form class="landing-signup" action="https://canopy-2.kit.com/prompt-like-a-pro" method="get" target="_blank" rel="noopener">
+          <label class="sr-only" for="email">Email address</label>
+          <input id="email" name="email_address" type="email" placeholder="your@email.com" required />
+          <button type="submit">Join the List</button>
+        </form>
+      </section>
+    </section>
+  </main>
 
-      <article class="drop drop--soon" id="drop-contentos" data-lane="systems">
-        <div class="drop-tags">
-          <span class="drop-tag systems">Systems</span>
-        </div>
-        <h3 class="drop-name">Content OS</h3>
-        <p class="drop-line">Your creator operating system. The full Canopy stack, productized.</p>
-        <div class="drop-foot">
-          <span class="drop-price soon">SOON</span>
-          <a class="drop-cta" href="#guestlist" data-link="kit-contentos">Get the Drop Notice</a>
-        </div>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- 5. FOUNDER SIGNAL -->
-  <section class="founder" id="founder">
-    <figure class="founder-photo">
-      <img src="./assets/stephanie-founder.jpg" alt="Stephanie Gonzalez, founder of Canopy">
-      <figcaption>MIAMI</figcaption>
-    </figure>
-    <div class="founder-text">
-      <span class="eyebrow" style="color: var(--sunset)">Built in Miami</span>
-      <p class="founder-line">
-        Created by <strong>Stephanie Gonzalez</strong> for women building prettier, faster online worlds.
-      </p>
-      <p class="founder-sub">
-        Miami based. AI systems builder. Founder of Canopy.
-      </p>
-      <a class="founder-cta" href="#founder">Read the full story →</a>
-    </div>
-  </section>
-
-  <!-- 6. GUESTLIST -->
-  <section class="guestlist" id="guestlist">
-    <div class="guestlist-inner">
-      <div class="guestlist-head">
-        <span class="eyebrow" style="color: var(--aqua)">Guestlist</span>
-        <h2 class="guestlist-title">Get on the guestlist.</h2>
-        <p class="guestlist-sub">Creator drops, prompt samples, mini-guides, and workflow ideas. Sent from Canopy.</p>
-      </div>
-
-      <form class="guestlist-form" id="guestlist-form" novalidate>
-        <div class="guestlist-row">
-          <input class="guestlist-input" type="email" name="email" required placeholder="Your email" autocomplete="email">
-          <button class="guestlist-button" type="submit">Join the Guestlist</button>
-        </div>
-        <p class="guestlist-fine">No spam. Unsubscribe anytime.</p>
-      </form>
-
-      <p class="guestlist-success">
-        ✦ You're on the guestlist. The next drop lands in your inbox.
-      </p>
-    </div>
-  </section>
-
-  <!-- 7. FOOTER -->
-  <footer class="footer">
-    <div class="footer-brand">
-      <p class="logo">Canopy</p>
-      <p class="tagline">Build your dreamy internet world.</p>
-    </div>
-
-    <div class="footer-col">
-      <h5>Shop</h5>
-      <ul>
-        <li><a href="#drops">Drops</a></li>
-        <li><a href="#drop-first3k">Free Resources</a></li>
-        <li><a href="#guestlist">Club Canopy</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h5>Learn</h5>
-      <ul>
-        <li><a href="#guestlist">Canopy Academy</a></li>
-        <li><a href="#guides">The Guides</a></li>
-        <li><a href="#founder">About</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h5>Legal</h5>
-      <ul>
-        <li><a href="mailto:meetcanopy@gmail.com?subject=Canopy%20Privacy">Privacy</a></li>
-        <li><a href="mailto:meetcanopy@gmail.com?subject=Canopy%20Terms">Terms</a></li>
-        <li><a href="mailto:meetcanopy@gmail.com">Contact</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-bottom">
-      <span>© 2026 Canopy <span class="footer-star">★</span> Miami</span>
-      <span>Prompt → Profit</span>
-    </div>
+  <footer class="footer home-footer">
+    <p>CANOPY | MIAMI</p>
+    <nav aria-label="Footer navigation">
+      <a href="shop.html">Shop</a>
+      <a href="resources.html">Free resources</a>
+      <a href="academy.html">Academy</a>
+      <a href="contact.html">Contact us</a>
+    </nav>
   </footer>
 
-  <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
