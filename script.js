@@ -1,59 +1,48 @@
-(() => {
-  const flash = document.querySelector('.flash');
-  const cabinets = document.querySelectorAll('.cabinet:not(.locked)');
-  const pressStart = document.querySelector('.press-start');
+// Club Canopy — homepage interactions
 
-  function fireFlash(then) {
-    if (!flash) { if (then) then(); return; }
-    flash.classList.remove('fire');
-    void flash.offsetWidth;
-    flash.classList.add('fire');
-    setTimeout(() => { if (then) then(); }, 350);
-  }
+// 1. Page-load shimmer auto-removes after CSS animation completes.
+window.addEventListener("load", () => {
+  const shimmer = document.querySelector(".shimmer");
+  if (shimmer) setTimeout(() => shimmer.remove(), 1800);
+});
 
-  cabinets.forEach((cab) => {
-    cab.addEventListener('click', (e) => {
-      if (e.target.closest('a')) return;
-      fireFlash();
-      cab.animate(
-        [
-          { transform: 'translate(0,0)' },
-          { transform: 'translate(-6px,-6px)' },
-          { transform: 'translate(0,0)' }
-        ],
-        { duration: 220, easing: 'steps(4, end)' }
-      );
-    });
-  });
-
-  if (pressStart) {
-    pressStart.addEventListener('click', (e) => {
-      e.preventDefault();
-      fireFlash(() => {
-        document.querySelector('#cabinets')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key.toLowerCase() === 'f') {
-      fireFlash();
+// 2. Guestlist: graceful local-success state. No fake backend.
+const guestlistForm = document.getElementById("guestlist-form");
+if (guestlistForm) {
+  guestlistForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const input = guestlistForm.querySelector("input[name=email]");
+    const email = input.value.trim();
+    if (!email || !email.includes("@")) {
+      input.style.borderColor = "var(--pink-hot)";
+      input.focus();
+      return;
     }
+    document.querySelector(".guestlist").classList.add("is-success");
   });
+}
 
-  const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-  let idx = 0;
-  document.addEventListener('keydown', (e) => {
-    const k = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-    if (k === konami[idx]) {
-      idx++;
-      if (idx === konami.length) {
-        document.body.style.filter = 'hue-rotate(45deg) saturate(1.3)';
-        fireFlash();
-        idx = 0;
-      }
-    } else {
-      idx = 0;
+// 3. Guide lane filter: dim non-matching drops on click. Click again to clear.
+const guides = document.querySelectorAll(".guide");
+const drops = document.querySelectorAll(".drop");
+let activeLane = null;
+
+guides.forEach((g) => {
+  g.addEventListener("click", () => {
+    const lane = g.dataset.lane;
+    if (activeLane === lane) {
+      activeLane = null;
+      drops.forEach((d) => (d.style.opacity = ""));
+      guides.forEach((x) => (x.style.outline = ""));
+      return;
     }
+    activeLane = lane;
+    guides.forEach((x) => (x.style.outline = ""));
+    g.style.outline = "2px solid currentColor";
+    drops.forEach((d) => {
+      const lanes = (d.dataset.lane || "").split(" ");
+      d.style.opacity = lanes.includes(lane) ? "1" : "0.32";
+    });
+    document.getElementById("drops")?.scrollIntoView({ behavior: "smooth", block: "start" });
   });
-})();
+});
