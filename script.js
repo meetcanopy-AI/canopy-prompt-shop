@@ -1,251 +1,119 @@
-const navToggle = document.querySelector("#navToggle");
-const navLinks = document.querySelector("#navLinks");
+(()=>{
+  const canvas=document.getElementById('blobField');
+  const ctx=canvas?.getContext('2d');
+  const clock=document.getElementById('clock');
+  const bubble=document.querySelector('.status-bubble');
+  const buddyOutput=document.getElementById('buddyOutput');
+  let w=0,h=0,dpr=1,t=0,blobs=[];
+  const rand=(a,b)=>a+Math.random()*(b-a);
+  const palette=[318,176,76,262,142,192];
 
-if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", String(isOpen));
-    document.body.classList.toggle("menu-open", isOpen);
-  });
-
-  navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      navToggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
-    });
-  });
-}
-
-const coursePreviews = {
-  system: {
-    label: "Signature course",
-    title: "The AI Content System",
-    text: "The full method for creating a month of content in a weekend: AI tools, workflows, prompts, organization, and the actual order to use them in. For anyone who wants someone to show them how it all fits together."
-  },
-  reels: {
-    label: "Course",
-    title: "Reels Mastery",
-    text: "Hooks, pacing, retention, posting strategy, repurposing, and the tiny edits that keep people watching. Everything I would teach a friend over coffee, packaged into a course."
-  },
-  brand: {
-    label: "Course",
-    title: "Build Your Brand with AI",
-    text: "For creators and small business owners who want a brand that actually looks like a brand. No designer required, no taste required, just follow the steps."
-  },
-  webinars: {
-    label: "Live education",
-    title: "Academy Webinars",
-    text: "Focused live sessions for creators who want a guided walkthrough: hooks, AI tools, content systems, brand visuals, planning, repurposing, and what to post next."
+  function tick(){
+    if(clock) clock.textContent=new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
   }
-};
+  setInterval(tick,10000); tick();
 
-const promptLabel = document.querySelector("#promptLabel");
-const promptTitle = document.querySelector("#promptTitle");
-const promptText = document.querySelector("#promptText");
-const copyPrompt = document.querySelector("#copyPrompt");
-const tabs = document.querySelectorAll(".format-tab");
+  document.addEventListener('pointermove',e=>{
+    document.documentElement.style.setProperty('--mx',e.clientX+'px');
+    document.documentElement.style.setProperty('--my',e.clientY+'px');
+  },{passive:true});
 
-tabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const format = tab.dataset.format;
-    const next = coursePreviews[format] || coursePreviews.system;
-
-    tabs.forEach((item) => item.classList.toggle("active", item === tab));
-    promptLabel.textContent = next.label;
-    promptTitle.textContent = next.title;
-    promptText.textContent = next.text;
-    copyPrompt.textContent = "Get course updates";
-  });
-});
-
-const heroCarousel = document.querySelector("[data-hero-carousel]");
-
-if (heroCarousel) {
-  const slides = [...heroCarousel.querySelectorAll("[data-carousel-slide]")];
-  const dots = [...heroCarousel.querySelectorAll("[data-carousel-dot]")];
-  const previousButton = heroCarousel.querySelector("[data-carousel-prev]");
-  const nextButton = heroCarousel.querySelector("[data-carousel-next]");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  let currentSlide = 0;
-  let carouselTimer = null;
-
-  const showSlide = (nextIndex) => {
-    if (!slides.length) {
-      return;
-    }
-
-    currentSlide = (nextIndex + slides.length) % slides.length;
-
-    slides.forEach((slide, index) => {
-      const isActive = index === currentSlide;
-      slide.classList.toggle("is-active", isActive);
-      slide.hidden = !isActive;
-      slide.setAttribute("aria-hidden", String(!isActive));
-    });
-
-    dots.forEach((dot, index) => {
-      const isActive = index === currentSlide;
-      dot.classList.toggle("is-active", isActive);
-      dot.setAttribute("aria-current", isActive ? "true" : "false");
-    });
-  };
-
-  const stopCarousel = () => {
-    if (carouselTimer) {
-      window.clearInterval(carouselTimer);
-      carouselTimer = null;
-    }
-  };
-
-  const startCarousel = () => {
-    if (reduceMotion || slides.length < 2) {
-      return;
-    }
-
-    stopCarousel();
-    carouselTimer = window.setInterval(() => {
-      showSlide(currentSlide + 1);
-    }, 6000);
-  };
-
-  previousButton?.addEventListener("click", () => {
-    showSlide(currentSlide - 1);
-    startCarousel();
-  });
-
-  nextButton?.addEventListener("click", () => {
-    showSlide(currentSlide + 1);
-    startCarousel();
-  });
-
-  dots.forEach((dot) => {
-    dot.addEventListener("click", () => {
-      showSlide(Number(dot.dataset.slideIndex || 0));
-      startCarousel();
+  document.querySelectorAll('[data-guide]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('[data-guide]').forEach(b=>b.classList.remove('is-active'));
+      btn.classList.add('is-active');
+      const msg=btn.dataset.message || `${btn.dataset.guide} is online. Pick a recipe and build the thing.`;
+      if(bubble) bubble.innerHTML=`<b>${btn.dataset.guide} is online.</b><br>Pick a recipe and build the thing.`;
+      if(buddyOutput) buddyOutput.textContent=msg;
     });
   });
 
-  heroCarousel.addEventListener("mouseenter", stopCarousel);
-  heroCarousel.addEventListener("mouseleave", startCarousel);
-  heroCarousel.addEventListener("focusin", stopCarousel);
-  heroCarousel.addEventListener("focusout", () => {
-    window.setTimeout(() => {
-      if (!heroCarousel.contains(document.activeElement)) {
-        startCarousel();
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click',e=>{
+      const id=a.getAttribute('href');
+      if(id && id.length>1){
+        const el=document.querySelector(id);
+        if(el){e.preventDefault();el.scrollIntoView({behavior:'smooth',block:'start'});}
       }
-    }, 0);
-  });
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      stopCarousel();
-    } else {
-      startCarousel();
-    }
-  });
-
-  showSlide(0);
-  startCarousel();
-}
-
-const revealTargets = [
-  document.querySelector(".club-hero-card"),
-  document.querySelector(".canopy-explainer"),
-  ...document.querySelectorAll(".start-card"),
-  document.querySelector(".guide-room"),
-  ...document.querySelectorAll(".guide-card"),
-  document.querySelector(".featured-cabinets"),
-  ...document.querySelectorAll(".drop-cabinet"),
-  document.querySelector(".landing-guest")
-].filter(Boolean);
-
-if (revealTargets.length) {
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealTargets.forEach((target) => target.classList.add("in-view"));
-  } else {
-    revealTargets.forEach((target, index) => {
-      target.classList.add("revealable");
-      target.style.setProperty("--reveal-delay", `${Math.min(index * 90, 360)}ms`);
     });
+  });
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        entry.target.classList.add("in-view");
-        observer.unobserve(entry.target);
-      });
-    }, { threshold: 0.18 });
-
-    revealTargets.forEach((target) => revealObserver.observe(target));
+  if(!canvas || !ctx) return;
+  function resize(){
+    dpr=Math.min(devicePixelRatio||1,2);
+    w=innerWidth; h=innerHeight;
+    canvas.width=w*dpr; canvas.height=h*dpr;
+    canvas.style.width=w+'px'; canvas.style.height=h+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    seed();
   }
-}
-
-document.querySelectorAll(".drop-cabinet").forEach((cabinet) => {
-  cabinet.addEventListener("click", () => {
-    cabinet.classList.remove("is-tapped");
-    void cabinet.offsetWidth;
-    cabinet.classList.add("is-tapped");
-  });
-
-  cabinet.addEventListener("animationend", () => {
-    cabinet.classList.remove("is-tapped");
-  });
-});
-
-const contactForm = document.querySelector("[data-contact-form]");
-
-if (contactForm) {
-  const formStatus = contactForm.querySelector("[data-form-status]");
-  const submitButton = contactForm.querySelector("button[type='submit']");
-  const defaultButtonText = submitButton ? submitButton.textContent : "";
-
-  contactForm.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    if (formStatus) {
-      formStatus.hidden = true;
-    }
-
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = "Sending...";
-    }
-
-    try {
-      const formData = new FormData(contactForm);
-
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData).toString()
+  function seed(){
+    blobs=[];
+    const n=Math.max(9,Math.min(18,Math.floor(w/115)));
+    for(let i=0;i<n;i++){
+      blobs.push({
+        x:rand(-80,w+80),y:rand(-40,h+80),
+        vx:rand(-.16,.16),vy:rand(-.12,.12),
+        r:rand(80,190),seed:rand(0,999),hue:palette[i%palette.length]+rand(-16,16)
       });
-
-      if (!response.ok) {
-        throw new Error("Form submission failed");
-      }
-
-      contactForm.reset();
-
-      if (formStatus) {
-        formStatus.textContent = "Message sent. We'll get back to you soon.";
-        formStatus.hidden = false;
-      }
-    } catch (error) {
-      if (formStatus) {
-        formStatus.textContent = "Something went wrong. Please email meetcanopy@gmail.com.";
-        formStatus.hidden = false;
-      }
-    } finally {
-      if (submitButton) {
-        submitButton.disabled = false;
-        submitButton.textContent = defaultButtonText;
-      }
     }
-  });
-}
+  }
+  function shape(b){
+    const wob=.18; const pts=[];
+    for(let i=0;i<14;i++){
+      const a=Math.PI*2*i/14;
+      const wave=Math.sin(t*.0012+b.seed+i*1.7)*wob+Math.cos(t*.0009+b.seed*.6+i*2.1)*wob*.7;
+      const rr=b.r*(1+wave);
+      pts.push([b.x+Math.cos(a)*rr,b.y+Math.sin(a)*rr]);
+    }
+    ctx.beginPath(); ctx.moveTo(pts[0][0],pts[0][1]);
+    for(let i=0;i<pts.length;i++){
+      const p=pts[i],n=pts[(i+1)%pts.length];
+      ctx.quadraticCurveTo(p[0],p[1],(p[0]+n[0])/2,(p[1]+n[1])/2);
+    }
+    ctx.closePath();
+  }
+  function drawBlob(b,i){
+    const pulse=Math.sin(t*.001+b.seed)*.5+.5;
+    const g=ctx.createRadialGradient(b.x-b.r*.2,b.y-b.r*.22,b.r*.08,b.x,b.y,b.r*1.35);
+    g.addColorStop(0,`hsla(${b.hue+t*.018},100%,92%,.95)`);
+    g.addColorStop(.18,`hsla(${b.hue+70},100%,66%,.88)`);
+    g.addColorStop(.42,`hsla(${b.hue+155},100%,70%,.72)`);
+    g.addColorStop(.68,`hsla(${b.hue+250},100%,70%,.56)`);
+    g.addColorStop(1,`hsla(${b.hue+110},100%,55%,.02)`);
+    ctx.save();
+    ctx.shadowBlur=55+pulse*35;
+    ctx.shadowColor=`hsla(${b.hue+120},100%,70%,.38)`;
+    ctx.globalCompositeOperation='lighter';
+    shape(b); ctx.fillStyle=g; ctx.fill();
+    ctx.lineWidth=2; ctx.strokeStyle=`hsla(${b.hue+180+i*9},100%,86%,.46)`; ctx.stroke();
+    ctx.restore();
+  }
+  function metaballLines(){
+    ctx.save(); ctx.globalCompositeOperation='screen'; ctx.lineWidth=1;
+    for(let i=0;i<blobs.length;i++) for(let j=i+1;j<blobs.length;j++){
+      const a=blobs[i],b=blobs[j],dx=a.x-b.x,dy=a.y-b.y,dist=Math.hypot(dx,dy),limit=(a.r+b.r)*1.22;
+      if(dist<limit){ctx.strokeStyle=`rgba(207,255,121,${(1-dist/limit)*.14})`;ctx.beginPath();ctx.moveTo(a.x,a.y);ctx.lineTo(b.x,b.y);ctx.stroke();}
+    }
+    ctx.restore();
+  }
+  function frame(now){
+    t=now; ctx.clearRect(0,0,w,h);
+    const bg=ctx.createRadialGradient(w*.5,h*.48,0,w*.5,h*.5,Math.max(w,h)*.75);
+    bg.addColorStop(0,'rgba(38,55,33,.42)');
+    bg.addColorStop(.48,'rgba(8,6,10,.96)');
+    bg.addColorStop(1,'rgba(0,0,0,1)');
+    ctx.fillStyle=bg; ctx.fillRect(0,0,w,h);
+    blobs.forEach((b,i)=>{
+      b.x+=b.vx+Math.sin(t*.0007+b.seed)*.08;
+      b.y+=b.vy+Math.cos(t*.0008+b.seed)*.07;
+      if(b.x<-b.r)b.x=w+b.r; if(b.x>w+b.r)b.x=-b.r;
+      if(b.y<-b.r)b.y=h+b.r; if(b.y>h+b.r)b.y=-b.r;
+      drawBlob(b,i);
+    });
+    metaballLines();
+    requestAnimationFrame(frame);
+  }
+  addEventListener('resize',resize,{passive:true});
+  resize(); requestAnimationFrame(frame);
+})();

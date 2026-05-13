@@ -1,231 +1,257 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Canopy - Creator Guides, Drops, and Club Canopy</title>
-  <meta name="description" content="Canopy is a dreamy creator shop for prompt packs, render drops, Academy sessions, Club Canopy, and creator systems." />
-  <meta property="og:title" content="Canopy - Build Your Internet World" />
-  <meta property="og:description" content="Enter Club Canopy, choose your medium, and browse creator drops, guides, freebies, Academy sessions, and Content OS tools." />
-  <meta property="og:image" content="stephanie-pixel-avatar.jpg" />
-  <meta property="og:type" content="website" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Righteous&display=swap" rel="stylesheet" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canopy | AI Systems, Courses, and Workflows for Women</title>
+  <meta name="description" content="Canopy helps women use AI to clean up admin chaos, HR workflows, content systems, offers, client intake, and business backends." />
+  <meta property="og:title" content="Canopy | AI Systems, Courses, and Workflows for Women" />
+  <meta property="og:description" content="Book a Canopy AI Systems Audit, read the course guide, or join the AI Admin Cleanup Letter." />
+  <meta property="og:image" content="assets/club-canopy-girls.jpg" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="home-page">
-  <main id="top" class="home-main">
-    <section class="landing-home" aria-label="Canopy homepage">
-      <nav class="landing-pill-nav" aria-label="Home navigation">
-        <a href="about.html">about</a>
-        <a href="shop.html">shop</a>
-        <a href="drop-club.html">club<br />canopy</a>
-        <a href="academy.html">canopy<br />academy</a>
-        <a href="content-os.html">canopy<br />content os</a>
-        <a href="resources.html">free<br />resources</a>
-      </nav>
+<body class="canopy-revenue-page">
+  <canvas id="blobField" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
 
-      <section class="club-hero" aria-labelledby="club-hero-title">
-        <div class="landing-showcase" aria-label="Welcome to Club Canopy pixel dancers">
-          <div class="landing-video-card">
-            <span class="frame-led led-top-left" aria-hidden="true"></span>
-            <span class="frame-led led-top-right" aria-hidden="true"></span>
-            <span class="frame-led led-bottom-left" aria-hidden="true"></span>
-            <span class="frame-led led-bottom-right" aria-hidden="true"></span>
-            <span class="video-sparkle sparkle-one" aria-hidden="true">✦</span>
-            <span class="video-sparkle sparkle-two" aria-hidden="true">✧</span>
-            <span class="video-sparkle sparkle-three" aria-hidden="true">✦</span>
-            <video class="landing-video" src="canopy-hero-dancers.mp4" autoplay muted loop playsinline preload="auto" aria-label="Welcome to Club Canopy pixel dancers"></video>
+  <header class="topbar" aria-label="Canopy navigation">
+    <a class="brand" href="#top" aria-label="Canopy home"><span class="orb"></span><strong>Canopy</strong></a>
+    <nav>
+      <a href="systems-audit.html">systems audit</a>
+      <a href="course-guide.html">course guide</a>
+      <a href="#starter">free letter</a>
+      <a href="#buildout">buildout</a>
+    </nav>
+    <span class="status-pill"><span class="online-dot"></span>girls online · tools typing</span>
+    <span class="clock" id="clock">03:46 PM</span>
+  </header>
+
+  <main id="top" class="desktop">
+    <section class="hero window window--hero" aria-labelledby="hero-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>canopy.exe</b></div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">ai systems for the admin pile</p>
+          <h1 id="hero-title"><span>Build your</span><span>work + money</span><span>machine.</span></h1>
+          <p class="lede">Canopy helps women use AI for the work people actually pay to fix: follow-ups, SOPs, HR/admin docs, content systems, client intake, offers, pages, and messy business backends.</p>
+          <p class="why-now">Start with a practical Systems Audit, then learn the workflows inside Canopy Academy and Club Canopy.</p>
+          <div class="cta-row">
+            <a class="btn btn--primary" href="systems-audit.html">book a $297 beta audit</a>
+            <a class="btn btn--secondary" href="course-guide.html">open the course guide</a>
+          </div>
+          <div class="hero-proof" aria-label="Canopy values">
+            <span>first 3 beta spots</span>
+            <span>48-hour workflow map</span>
+            <span>cheap/free tools first</span>
           </div>
         </div>
+        <div class="stage-card" aria-label="Club Canopy visual world">
+          <div class="portal-label">mimi visual layer: iridescent blobs</div>
+          <img class="girls" src="assets/club-canopy-girls.jpg" alt="Club Canopy girls inside a digital dollhouse world" />
+          <div class="status-bubble"><b>Stephanie is away building.</b><br>The girls are online. Pick a door.</div>
+          <div class="floating-file file-a">starter_kit.zip</div>
+          <div class="floating-file file-b">tiny_app.exe</div>
+        </div>
+      </div>
+    </section>
 
-        <div class="club-hero-card">
-          <span class="club-kicker">Club Canopy is open</span>
-          <div class="headline-wrap">
-            <span class="headline-twinkle twinkle-a" aria-hidden="true">✦</span>
-            <span class="headline-twinkle twinkle-b" aria-hidden="true">✧</span>
-            <span class="headline-twinkle twinkle-c" aria-hidden="true">✦</span>
-            <h1 id="club-hero-title">Build your internet world.</h1>
-          </div>
-          <p>Canopy is a dreamy creator shop for prompt packs, render drops, guides, and tiny systems that make your online world faster, prettier, and more you.</p>
-          <div class="hero-actions" aria-label="Hero actions">
-            <a class="soft-start" href="#entrance">Press Start</a>
-            <a class="ghost-link" href="#guides">Choose your guide</a>
-          </div>
-        </div>
-      </section>
+    <aside class="buddy window" id="buddy-list" aria-labelledby="buddy-title">
+      <div class="windowbar"><span></span><span></span><span></span><b id="buddy-title">Buddy List Online</b></div>
+      <button data-guide="Vivi" data-message="Vivi is online. Start with visuals: moodboards, image prompts, renders, and brand worlds.">🖼 <strong>Vivi</strong><em>visuals</em></button>
+      <button data-guide="Mimi" data-message="Mimi is online. Start with motion: GIFs, loops, portals, vortexes, and moving posts.">🌀 <strong>Mimi</strong><em>motion</em></button>
+      <button data-guide="Suki" data-message="Suki is online. Start with sound: sonic identity, music prompts, beds, and audio moodboards.">🎧 <strong>Suki</strong><em>sound</em></button>
+      <button data-guide="Vox" data-message="Vox is online. Start with voice: bios, captions, scripts, launch copy, and founder notes.">✍️ <strong>Vox</strong><em>voice</em></button>
+      <button data-guide="Coda" data-message="Coda is online. Start with code/apps: quizzes, calculators, generators, pages, and web toys.">💻 <strong>Coda</strong><em>code/apps</em></button>
+      <button data-guide="Sisi" data-message="Sisi is online. Start with systems: content rhythm, workflows, templates, and control rooms.">🗂 <strong>Sisi</strong><em>systems</em></button>
+      <button data-guide="Monet" data-message="Monet is online. Start with money: offers, checkout pages, product ladders, and launch assets.">💸 <strong>Monet</strong><em>money</em></button>
+      <div class="buddy-output" id="buddyOutput">Click a buddy. She’ll tell you where to start.</div>
+    </aside>
 
-      <section class="start-here" id="entrance" aria-labelledby="start-here-title">
-        <div class="start-here-heading">
-          <span>Choose your entrance</span>
-          <h2 id="start-here-title">Pick your portal.</h2>
-          <p>Start with a drop, a freebie, or the club.</p>
+    <section class="window orient" aria-labelledby="what-is">
+      <div class="windowbar"><span></span><span></span><span></span><b>what_is_this.txt</b></div>
+      <div class="section-grid section-grid--tight">
+        <div>
+          <p class="eyebrow">plain english, no mystery cult</p>
+          <h2 id="what-is">What is Canopy?</h2>
         </div>
-        <div class="start-here-grid">
-          <a class="start-card portal-tile" href="shop.html">
-            <span class="portal-status">LEVEL 01</span>
-            <span class="portal-corners" aria-hidden="true"></span>
-            <span class="portal-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M7 9h10l1 10H6L7 9Z" />
-                <path d="M9 9a3 3 0 0 1 6 0" />
-                <path d="M17.5 4.5 18.4 6l1.6.7-1.6.7-.9 1.6-.8-1.6-1.7-.7 1.7-.7.8-1.5Z" />
-              </svg>
-            </span>
-            <span class="portal-text">
-              <strong>Shop the Drops</strong>
-              <span>Guides, prompts, and creator kits.</span>
-            </span>
-            <span class="portal-cta">Enter Portal <span aria-hidden="true">&rarr;</span></span>
-          </a>
-          <a class="start-card portal-tile" href="resources.html">
-            <span class="portal-status">LEVEL 02</span>
-            <span class="portal-corners" aria-hidden="true"></span>
-            <span class="portal-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 10h14v10H5V10Z" />
-                <path d="M4 7h16v3H4V7Z" />
-                <path d="M12 7v13" />
-                <path d="M12 7c-3.2 0-4.2-3.2-1.6-3.2C11.8 3.8 12 7 12 7Z" />
-                <path d="M12 7c3.2 0 4.2-3.2 1.6-3.2C12.2 3.8 12 7 12 7Z" />
-              </svg>
-            </span>
-            <span class="portal-text">
-              <strong>Grab Freebies</strong>
-              <span>Samples, mini-guides, and creator tools.</span>
-            </span>
-            <span class="portal-cta">Enter Portal <span aria-hidden="true">&rarr;</span></span>
-          </a>
-          <a class="start-card portal-tile" href="drop-club.html">
-            <span class="portal-status">LEVEL 03</span>
-            <span class="portal-corners" aria-hidden="true"></span>
-            <span class="portal-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 4a8 8 0 1 0 0 16 8 8 0 0 0 0-16Z" />
-                <path d="M12 7v10" />
-                <path d="M8 12h8" />
-                <path d="M15.5 8.5 17 7l1.5 1.5L17 10l-1.5-1.5Z" />
-              </svg>
-            </span>
-            <span class="portal-text">
-              <strong>Enter Club Canopy</strong>
-              <span>Members-only drops and experiments.</span>
-            </span>
-            <span class="portal-cta">Enter Portal <span aria-hidden="true">&rarr;</span></span>
-          </a>
+        <div class="copy-block">
+          <p>A practical AI studio and school for women who want cleaner work systems, sharper content, useful internet assets, and business backends that stop eating their day.</p>
+          <p>You do not need to be technical. You need taste, curiosity, and a place to start.</p>
+          <div class="chips" aria-label="things Canopy helps build"><span>AI workflows</span><span>HR/admin systems</span><span>content systems</span><span>offers</span><span>pages</span><span>digital products</span></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="guide-room" id="guides" aria-labelledby="guide-room-title">
-        <div class="guide-heading">
-          <span>Canopy Guides</span>
-          <h2 id="guide-room-title">Choose your medium.</h2>
-          <p>Each guide marks a creator lane, so you can shop by what you are trying to make.</p>
-        </div>
-        <div class="guide-grid" aria-label="Canopy guide categories">
-          <a class="guide-card voice" href="shop.html">
-            <span class="guide-stamp" aria-hidden="true">V</span>
-            <strong>Voice</strong>
-            <span>Hooks, captions, scripts, newsletters, brand voice, and DMs.</span>
-          </a>
-          <a class="guide-card visual" href="shop.html">
-            <span class="guide-stamp" aria-hidden="true">✧</span>
-            <strong>Visual</strong>
-            <span>Renders, image prompts, aesthetics, moodboards, and brand visuals.</span>
-          </a>
-          <a class="guide-card motion" href="resources.html">
-            <span class="guide-stamp" aria-hidden="true">▶</span>
-            <strong>Motion</strong>
-            <span>Reels, TikToks, content ideas, shot lists, and short-form systems.</span>
-          </a>
-          <a class="guide-card systems" href="content-os.html">
-            <span class="guide-stamp" aria-hidden="true">◆</span>
-            <strong>Systems</strong>
-            <span>Workflows, automations, calendars, organization, and Content OS.</span>
-          </a>
-          <a class="guide-card money" href="academy.html">
-            <span class="guide-stamp" aria-hidden="true">$</span>
-            <strong>Money</strong>
-            <span>Offers, sales, lead gen, client conversion, and first paid clients.</span>
-          </a>
-        </div>
-      </section>
+    <section class="conversion" aria-labelledby="conversion-title">
+      <div>
+        <p class="eyebrow">three doors, no wandering</p>
+        <h2 id="conversion-title">Sell the audit. Grow the list. Keep the Club as the IP engine.</h2>
+      </div>
+      <div class="conversion-grid">
+        <a class="conversion-door" href="systems-audit.html"><span>Door 1</span><strong>Book the Systems Audit</strong><em>fastest money lane for Facebook + LinkedIn</em></a>
+        <a class="conversion-door" href="course-guide.html"><span>Door 2</span><strong>Read the Course Guide</strong><em>clear roadmap for AI work, systems, content + money</em></a>
+        <a class="conversion-door" href="#starter"><span>Door 3</span><strong>Join the Free Letter</strong><em>keep leads warm until they buy</em></a>
+      </div>
+    </section>
 
-      <section class="featured-cabinets" id="drops" aria-labelledby="featured-cabinets-title">
-        <div class="cabinet-heading">
-          <span>Featured cabinets</span>
-          <h2 id="featured-cabinets-title">Select your drop.</h2>
-          <p>Creator tools packaged like polished arcade cabinets, each one leading to a different room in the Canopy world.</p>
-        </div>
-        <div class="cabinet-grid">
-          <a class="drop-cabinet cyan" href="resources.html">
-            <span class="cabinet-label">Guide: Money</span>
-            <span class="cabinet-screen" aria-hidden="true">$3K</span>
-            <strong>First $3K</strong>
-            <span>Lead magnet and starter prompts for finding your first paid clients.</span>
-            <em>Open cabinet</em>
-          </a>
-          <a class="drop-cabinet pink" href="shop.html">
-            <span class="cabinet-label">Guide: Voice</span>
-            <span class="cabinet-screen" aria-hidden="true">KIT</span>
-            <strong>Starter Kit</strong>
-            <span>Prompt packs, captions, hooks, and creator building blocks.</span>
-            <em>Browse the shelf</em>
-          </a>
-          <a class="drop-cabinet gold" href="shop.html">
-            <span class="cabinet-label">Guide: Money</span>
-            <span class="cabinet-screen" aria-hidden="true">DM</span>
-            <strong>DM Playbook</strong>
-            <span>Conversation prompts and sales notes for warmer client conversion.</span>
-            <em>View playbook</em>
-          </a>
-          <a class="drop-cabinet violet" href="academy.html">
-            <span class="cabinet-label">Guide: Motion</span>
-            <span class="cabinet-screen" aria-hidden="true">LIVE</span>
-            <strong>Academy</strong>
-            <span>Webinars, courses, and guided creator sessions for building with support.</span>
-            <em>Enter Academy</em>
-          </a>
-          <a class="drop-cabinet aqua" href="contact.html">
-            <span class="cabinet-label">Guide: Systems</span>
-            <span class="cabinet-screen" aria-hidden="true">1:1</span>
-            <strong>1:1 Sessions</strong>
-            <span>Personal direction for your offers, content workflow, and next build.</span>
-            <em>Start the note</em>
-          </a>
-          <a class="drop-cabinet lavender" href="content-os.html">
-            <span class="cabinet-label">Guide: Systems</span>
-            <span class="cabinet-screen" aria-hidden="true">OS</span>
-            <strong>Content OS</strong>
-            <span>Calendars, automations, workflows, and organization for your content engine.</span>
-            <em>See the system</em>
-          </a>
-        </div>
-      </section>
+    <section class="window build-menu" id="build-menu" aria-labelledby="build-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>choose_a_door.html</b></div>
+      <div class="section-head">
+        <p class="eyebrow">pick the first tiny win</p>
+        <h2 id="build-title">What do you want to build?</h2>
+        <p>Every path ends with a visible thing you can use, post, sell, or keep building.</p>
+      </div>
+      <div class="door-grid">
+        <article class="door"><span class="door-icon">🌀</span><h3>Make a visual loop</h3><p>Turn your photos, renders, or brand assets into a moving little world.</p><small>Beginner · 45 minutes</small><a href="#starter">start with Mimi</a></article>
+        <article class="door"><span class="door-icon">🕹</span><h3>Make a web toy</h3><p>A tiny clickable thing with your taste baked in: quiz, generator, calculator, or game.</p><small>Beginner · 60 minutes</small><a href="#starter">start with Coda</a></article>
+        <article class="door"><span class="door-icon">🗂</span><h3>Make a content system</h3><p>Capture ideas, turn them into posts, and ship without spiraling.</p><small>Beginner · 30 minutes</small><a href="#starter">start with Sisi</a></article>
+        <article class="door"><span class="door-icon">💸</span><h3>Make your money machine</h3><p>Shape one offer, one checkout path, and one launch note that makes the next click obvious.</p><small>Focused · 90 minutes</small><a href="#buildout">start with Monet</a></article>
+      </div>
+    </section>
 
-      <section class="landing-guest" aria-labelledby="guest-list-title">
-        <div class="landing-guest-copy">
-          <h2 id="guest-list-title">Free creator drops, straight to your inbox.</h2>
-          <p>Join the Canopy guestlist for prompt samples, mini-guides, release alerts, and creator workflow ideas.</p>
+    <section class="window starter" id="starter" aria-labelledby="starter-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>starter_kit.zip</b></div>
+      <div class="starter-grid">
+        <div>
+          <p class="eyebrow">free weekly letter</p>
+          <h2 id="starter-title">Get the AI Admin Cleanup Letter.</h2>
+          <p class="big-copy">One practical note a week for women who want AI to clean up actual work: admin, HR, follow-ups, content, systems, and money paths.</p>
+          <ul class="check-list">
+            <li>one annoying workflow to clean up</li>
+            <li>one prompt or tool path</li>
+            <li>one example you can copy</li>
+            <li>one money/leverage angle</li>
+          </ul>
         </div>
-        <form class="landing-signup" action="https://canopy-2.kit.com/prompt-like-a-pro" method="get" target="_blank" rel="noopener">
-          <label class="sr-only" for="email">Email address</label>
-          <input id="email" name="email_address" type="email" placeholder="your@email.com" required />
-          <button type="submit">Join the List</button>
+        <form class="signup-card" name="starter-kit" method="POST" data-netlify="true" action="/thank-you.html">
+          <input type="hidden" name="form-name" value="starter-kit" />
+          <label>first name<input name="name" autocomplete="name" placeholder="Stephanie" /></label>
+          <label>email<input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
+          <label>what do you want AI to help with first?
+            <select name="first-build">
+              <option>admin / follow-ups</option>
+              <option>HR / people ops</option>
+              <option>content system</option>
+              <option>sales page / offer</option>
+              <option>remote work / career</option>
+              <option>I have no idea, I just need help</option>
+            </select>
+          </label>
+          <button class="btn btn--primary" type="submit">send me the letter</button>
+          <p class="form-note">The calm weekly antidote to “I downloaded five AI apps and still did the task manually.”</p>
         </form>
-      </section>
+      </div>
+    </section>
+
+    <section class="window offers" aria-labelledby="offers-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>build_guides.store</b></div>
+      <div class="section-head">
+        <p class="eyebrow">the paid shelf</p>
+        <h2 id="offers-title">Start with one Build Guide.</h2>
+        <p>Small, specific recipes. Each one teaches a real output, not vague inspiration.</p>
+      </div>
+      <div class="offer-grid">
+        <article class="offer-card hot"><span>first drop</span><h3>Mimi’s Photo Vortex</h3><p>Turn a folder of images into a moving visual portal for your brand.</p><small>TouchDesigner/browser path · beginner-friendly</small><a href="#starter">join the drop list</a></article>
+        <article class="offer-card"><span>coming next</span><h3>Coda’s First Web Toy</h3><p>Build a tiny clickable quiz/generator that feels like your own corner of the internet.</p><small>HTML/CSS/agent path · beginner-friendly</small><a href="#starter">get notified</a></article>
+        <article class="offer-card"><span>coming next</span><h3>Sisi’s Content Control Room</h3><p>Make a simple system that turns messy ideas into publishable posts.</p><small>Notion/Airtable/spreadsheet path · beginner-friendly</small><a href="#starter">get notified</a></article>
+      </div>
+    </section>
+
+    <section class="window club" id="club" aria-labelledby="club-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>club_canopy.chat</b></div>
+      <div class="section-grid">
+        <div>
+          <p class="eyebrow">recurring momentum</p>
+          <h2 id="club-title">Join the build club.</h2>
+          <p class="big-copy">Every month, we build new internet things together: visual loops, mini apps, web toys, content systems, and digital products.</p>
+          <a class="btn btn--primary" href="#starter">join the founding list</a>
+        </div>
+        <div class="inside-list">
+          <h3>Inside the club</h3>
+          <ul>
+            <li>monthly build drops</li>
+            <li>beginner recipes</li>
+            <li>tool breakdowns</li>
+            <li>prompt libraries</li>
+            <li>community/chat and build threads</li>
+            <li>examples, swipe files, and tiny challenges</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="window buildout" id="buildout" aria-labelledby="buildout-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>premium_buildout.app</b></div>
+      <div class="section-grid">
+        <div>
+          <p class="eyebrow">for the “please help me build this” people</p>
+          <h2 id="buildout-title">Want Canopy to build your system with you?</h2>
+          <p class="big-copy">For creators, coaches, founders, and service providers who need their offer, content, page, workflows, and launch assets shaped into one usable internet control room.</p>
+        </div>
+        <div class="buildout-card">
+          <h3>What can get built</h3>
+          <div class="mini-grid"><span>offer clarity</span><span>content system</span><span>landing page</span><span>prompt workflows</span><span>product ladder</span><span>launch assets</span></div>
+          <a class="btn btn--secondary" href="mailto:meetcanopy@gmail.com?subject=Canopy%20Buildout%20Application">apply for a Canopy buildout</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="window founder" aria-labelledby="founder-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>stephanie_is_away.msg</b></div>
+      <div class="founder-grid">
+        <img src="stephanie.jpg" alt="Stephanie Gonzalez, founder of Canopy" />
+        <div>
+          <p class="eyebrow">founder window</p>
+          <h2 id="founder-title">Stephanie Gonzalez</h2>
+          <p>Former professional dancer turned systems builder. I spent years learning performance, rhythm, taste, and attention. Now I use that same brain to build internet systems, tools, and worlds.</p>
+          <p>I help women stop watching the new internet happen from the sidelines and start making things inside it.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="window proof" aria-labelledby="proof-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>why_it_matters.txt</b></div>
+      <div class="section-head">
+        <p class="eyebrow">the thesis</p>
+        <h2 id="proof-title">The new internet belongs to people who can make things.</h2>
+        <p>You do not need to become a software engineer. You do need to know how to direct tools, shape ideas, make assets, publish experiments, and build small useful things that belong to you.</p>
+      </div>
+      <div class="proof-grid">
+        <article><b>Templates are not enough.</b><p>You need to know how to change the thing, not just fill in blanks.</p></article>
+        <article><b>Posting is not enough.</b><p>You need artifacts, systems, offers, and places people can click.</p></article>
+        <article><b>Prompts are not the product.</b><p>The product is the page, loop, app, guide, offer, or workflow you ship.</p></article>
+      </div>
+    </section>
+
+    <section class="window faq" aria-labelledby="faq-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>faq.txt</b></div>
+      <div class="section-head">
+        <p class="eyebrow">fear removal department</p>
+        <h2 id="faq-title">Questions before you enter?</h2>
+      </div>
+      <div class="faq-grid">
+        <details open><summary>Do I need to code?</summary><p>No traditional coding background required. Some builds may touch code, but the recipes are written for beginners and focus on what to make, where to click, and what to change.</p></details>
+        <details><summary>Do I need expensive tools?</summary><p>No. Canopy starts with cheap/free paths first. Paid tools are optional upgrades when they actually help.</p></details>
+        <details><summary>Is this just prompts?</summary><p>No. Prompts are part of it, but the point is making real outputs: pages, visuals, apps, systems, offers, and digital products.</p></details>
+        <details><summary>What if I’m not technical?</summary><p>Perfect. Canopy is built for smart creative women who are tired of being locked out of technical spaces.</p></details>
+      </div>
+    </section>
+
+    <section class="final-cta window" aria-labelledby="final-title">
+      <div class="windowbar"><span></span><span></span><span></span><b>start_here.exe</b></div>
+      <h2 id="final-title">Pick a thing. Build it. Own your corner.</h2>
+      <p>Start with the free AI Admin Cleanup Letter, apply for a Systems Audit, or join the build club list if you want the deeper Canopy world.</p>
+      <div class="cta-row cta-row--center">
+        <a class="btn btn--primary" href="#starter">get the free letter</a>
+        <a class="btn btn--secondary" href="systems-audit.html">book the audit</a>
+      </div>
     </section>
   </main>
 
-  <footer class="footer home-footer">
-    <p>CANOPY | MIAMI</p>
-    <nav aria-label="Footer navigation">
-      <a href="shop.html">Shop</a>
-      <a href="resources.html">Free resources</a>
-      <a href="academy.html">Academy</a>
-      <a href="contact.html">Contact us</a>
-    </nav>
+  <footer class="footer">
+    <p><strong>Canopy</strong> · AI systems, courses, and practical internet work for women building leverage.</p>
+    <nav><a href="systems-audit.html">Systems Audit</a><a href="course-guide.html">Course Guide</a><a href="#starter">Free Letter</a><a href="#club">Club</a><a href="#buildout">Buildout</a><a href="mailto:meetcanopy@gmail.com">Contact</a></nav>
   </footer>
 
   <script src="script.js"></script>
